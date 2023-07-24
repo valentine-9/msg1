@@ -80,6 +80,7 @@ const AuthForm = () => {
             type='email'
             register={register}
             errors={errors}
+            disabled={isLoading}
           />
           <Input
             id='password'
@@ -87,6 +88,7 @@ const AuthForm = () => {
             type='password'
             register={register}
             errors={errors}
+            disabled={isLoading}
           />
           <div>
             <Button disabled={isLoading} fullWidth type='submit'>
@@ -145,6 +147,9 @@ const AuthForm = () => {
             {variant === 'LOGIN'
               ? 'New to Messenger?'
               : 'Already have an account?'}
+          </div>
+          <div onClick={toggleVariant} className='underline cursor-pointer'>
+            {variant === 'LOGIN' ? 'Create an account' : 'Login'}
           </div>
         </div>
       </div>
